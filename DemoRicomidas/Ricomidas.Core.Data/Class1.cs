@@ -43,8 +43,6 @@ namespace Ricomidas.Core.Data
         public string Nit { get; set; }
         public string Telefono { get; set; }
         public string Direccion { get; set; }
-
-
         public virtual ICollection<Remision> Remisiones { get; set; }
 
     }
