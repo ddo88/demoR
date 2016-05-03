@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Ricomidas.Core.Data;
+using Ricomidas.Core.Data.Services;
 
 namespace WpfApplication1
 {
@@ -24,9 +25,7 @@ namespace WpfApplication1
         public MainWindow()
         {
             InitializeComponent();
-
-            var context = new Contexto();
-            context.Clientes.Count();
+            
 
         }
     }
