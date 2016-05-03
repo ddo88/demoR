@@ -17,18 +17,25 @@ namespace Ricomidas.Core.Data
         }
         public DbSet<Cliente> Clientes { get; set; }
         public DbSet<Producto> Productos { get; set; }
+        public DbSet<Remision> Remisiones { get; set; }
+        public DbSet<DetalleRemision> DetallesRem { get; set; }
+
+        
+        
 
     }
 
-    public class Test
-    {
-        public Test()
-        {
-            new Contexto().Clientes.Where(x => x.Nombre == "Pepito");
-        }
-    }
+    //public class Test
+    //{
+    //    public Test()
+    //    {
+    //        new Contexto().Clientes.Where(x => x.Nombre == "Pepito");
+    //        var remision = new Remision();
 
+    //    }
+    //}
 
+    [Table("Cliente")]
     public class Cliente
     {
         public int Id { get; set; }
@@ -37,9 +44,12 @@ namespace Ricomidas.Core.Data
         public string Telefono { get; set; }
         public string Direccion { get; set; }
 
+
+        public virtual ICollection<Remision> Remisiones { get; set; }
+
     }
 
-
+    [Table("Producto")]
     //Buscar sobre EntityFramework Code First
     public class Producto
     {
@@ -50,14 +60,19 @@ namespace Ricomidas.Core.Data
         public virtual ICollection<DetalleRemision> Remisiones { get; set; }
     }
 
+
+    [Table("Remision")]
     public class Remision
     {
 
         public int Id { get; set; }
-        public string Cliente { get; set; }
+        public int IdCliente { get; set; }
         public decimal ValorTotal { get; set; }
         public DateTime FechaCreacion { get; set; }
-        public int MyProperty { get; set; }
+        
+        [ForeignKey("IdCliente")]
+        public virtual Cliente Cliente { get; set; }
+
 
     }
 
@@ -74,5 +89,4 @@ namespace Ricomidas.Core.Data
         public virtual Producto Producto { get; set; }
 
     }
-
 }
