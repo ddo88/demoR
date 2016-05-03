@@ -16,7 +16,16 @@ namespace Ricomidas.Core.Data
         public string Cantidad { get; set; }
     }
 
-    
+    public class Remision
+    {
+
+        public int Id { get; set; }
+        public string Cliente { get; set; }
+        public decimal ValorTotal { get; set; }
+        public DateTime FechaCreacion { get; set; }
+        public int MyProperty { get; set; }
+
+    }
 
 
     public class Contexto : DbContext
@@ -26,6 +35,7 @@ namespace Ricomidas.Core.Data
             
         }
         public DbSet<Cliente> Clientes { get; set; }
+        public DbSet<Producto> Productos { get; set; }
 
     }
 
@@ -44,7 +54,17 @@ namespace Ricomidas.Core.Data
         public string Nombre { get; set; }
         public string Nit { get; set; }
         public string Telefono { get; set; }
+        public string Direccion { get; set; }
 
+    }
+
+
+    public class DetalleRemision
+    {
+        public int Id { get; set; }
+        public string Producto { get; set; }
+        public int Cantidad { get; set; }
+        public decimal Subtotal { get; set; }
     }
 
 
