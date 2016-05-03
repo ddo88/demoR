@@ -55,7 +55,7 @@
     <Compile Include="Domain\Producto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Domain\Remision.cs" />
-    <Compile Include="Services\Service.cs" />
+    <Compile Include="Services\IService.cs" />
     <Compile Include="Services\ServicioCliente.cs" />
   </ItemGroup>
   <ItemGroup>

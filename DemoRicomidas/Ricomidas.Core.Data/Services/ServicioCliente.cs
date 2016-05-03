@@ -9,7 +9,7 @@ using Ricomidas.Core.Data.Domain;
 
 namespace Ricomidas.Core.Data.Services
 {
-    public class ServicioCliente:Service<Cliente>
+    public class ServicioCliente:IService<Cliente>
     {
         
         public Cliente GetById(int id)
@@ -70,8 +70,8 @@ namespace Ricomidas.Core.Data.Services
                 if (client != null)
                 {
 
-                    client.Nit = cliente.Nit;
-                    client.Nombre = cliente.Nombre;
+                    client.Nit = element.Nit;
+                    client.Nombre = element.Nombre;
                     client.Telefono = client.Telefono;
                     client.Direccion = client.Direccion;
 

@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 namespace Ricomidas.Core.Data.Services
 {
-    public interface Service<T>
+    public interface IService<T>
     {
 
         T GetById(int id);
