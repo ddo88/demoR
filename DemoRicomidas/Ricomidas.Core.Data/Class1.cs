@@ -11,7 +11,7 @@ namespace Ricomidas.Core.Data
 {
     public class Contexto : DbContext
     {
-        public Contexto():base("Model=BaseDatos")
+        public Contexto():base("name=Ricomidas")
         {
             
         }
