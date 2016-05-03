@@ -12,8 +12,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Ricomidas.Core.Data;
+using Ricomidas.Core.Data.Services;
 
-namespace DemoRicomidas
+namespace WpfApplication1
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -23,7 +25,7 @@ namespace DemoRicomidas
         public MainWindow()
         {
             InitializeComponent();
-
+            
 
         }
     }
