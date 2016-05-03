@@ -5,6 +5,12 @@ VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoRicomidas", "DemoRicomidas\DemoRicomidas.csproj", "{498BBD40-4DF9-41AF-B47E-0B11C67D4498}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Librerias", "Librerias", "{EA8F052D-E623-45D1-B6A8-02FA4CC40732}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Negocio", "Negocio", "{B84A5BFC-0A1B-4B9E-B5B0-02B42F72EC1F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App", "App", "{37845596-1150-489A-8F8D-4B4368561E05}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +24,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{498BBD40-4DF9-41AF-B47E-0B11C67D4498} = {37845596-1150-489A-8F8D-4B4368561E05}
 	EndGlobalSection
 EndGlobal
