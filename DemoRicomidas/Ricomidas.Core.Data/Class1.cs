@@ -37,6 +37,8 @@ namespace Ricomidas.Core.Data
         public DbSet<Cliente> Clientes { get; set; }
         public DbSet<Producto> Productos { get; set; }
 
+
+
     }
 
     //public class Test
@@ -62,7 +64,7 @@ namespace Ricomidas.Core.Data
     public class DetalleRemision
     {
         public int Id { get; set; }
-        public string Producto { get; set; }
+        public string IdProducto { get; set; }
         public int Cantidad { get; set; }
         public decimal Subtotal { get; set; }
     }
