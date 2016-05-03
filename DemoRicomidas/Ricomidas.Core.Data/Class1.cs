@@ -89,5 +89,4 @@ namespace Ricomidas.Core.Data
         public virtual Producto Producto { get; set; }
 
     }
-
 }
