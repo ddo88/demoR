@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
 using System.Linq;
 using System.Text;
@@ -7,27 +9,6 @@ using System.Threading.Tasks;
 
 namespace Ricomidas.Core.Data
 {
-
-    //Buscar sobre EntityFramework Code First
-    public class Producto
-    {
-        public int Id { get; set; }
-        public string Nombre { get; set; }
-        public string Cantidad { get; set; }
-    }
-
-    public class Remision
-    {
-
-        public int Id { get; set; }
-        public string Cliente { get; set; }
-        public decimal ValorTotal { get; set; }
-        public DateTime FechaCreacion { get; set; }
-        public int MyProperty { get; set; }
-
-    }
-
-
     public class Contexto : DbContext
     {
         public Contexto():base("Model=BaseDatos")
@@ -39,13 +20,13 @@ namespace Ricomidas.Core.Data
 
     }
 
-    //public class Test
-    //{
-    //    public Test()
-    //    {
-    //        new Contexto().Clientes.Where(x => x.Nombre == "Pepito");
-    //    }
-    //}
+    public class Test
+    {
+        public Test()
+        {
+            new Contexto().Clientes.Where(x => x.Nombre == "Pepito");
+        }
+    }
 
 
     public class Cliente
@@ -59,14 +40,39 @@ namespace Ricomidas.Core.Data
     }
 
 
-    public class DetalleRemision
+    //Buscar sobre EntityFramework Code First
+    public class Producto
     {
         public int Id { get; set; }
-        public string Producto { get; set; }
-        public int Cantidad { get; set; }
-        public decimal Subtotal { get; set; }
+        public string Nombre { get; set; }
+        public string Cantidad { get; set; }
+
+        public virtual ICollection<DetalleRemision> Remisiones { get; set; }
     }
 
+    public class Remision
+    {
 
+        public int Id { get; set; }
+        public string Cliente { get; set; }
+        public decimal ValorTotal { get; set; }
+        public DateTime FechaCreacion { get; set; }
+        public int MyProperty { get; set; }
+
+    }
+
+    [Table("DetalleRemision")]
+    public class DetalleRemision
+    {
+        [Key]
+        public int Id { get; set; }
+        public int IdProducto { get; set; }
+        public int Cantidad { get; set; }
+        public decimal Subtotal { get; set; }
+
+        [ForeignKey("IdProducto")]
+        public virtual Producto Producto { get; set; }
+
+    }
 
 }
