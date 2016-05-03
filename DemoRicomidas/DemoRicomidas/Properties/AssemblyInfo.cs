@@ -10,7 +10,7 @@ using System.Windows;
 [assembly: AssemblyTitle("DemoRicomidas")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("HybridSoftware")]
 [assembly: AssemblyProduct("DemoRicomidas")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
