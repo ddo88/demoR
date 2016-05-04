@@ -57,6 +57,7 @@
     <Compile Include="Domain\Remision.cs" />
     <Compile Include="Services\IService.cs" />
     <Compile Include="Services\ServicioCliente.cs" />
+    <Compile Include="Services\ServicioRemision.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
