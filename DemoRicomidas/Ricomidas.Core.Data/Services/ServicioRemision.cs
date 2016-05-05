@@ -11,7 +11,16 @@ namespace Ricomidas.Core.Data.Services
     {
         public void Delete(Remision element)
         {
-            throw new NotImplementedException();
+            using (var context = new Contexto())
+            {
+
+                var client = context.Remisiones.FirstOrDefault(x => x.Id == element.Id);
+                if (client != null)
+                {
+                    context.Remisiones.Remove(client);
+                    context.SaveChanges();
+                }
+            }
         }
 
         public ICollection<Remision> GetAll()
@@ -47,7 +56,21 @@ namespace Ricomidas.Core.Data.Services
 
         public void Update(Remision element)
         {
-            throw new NotImplementedException();
+            using (var context = new Contexto())
+            {
+
+                var remis = context.Remisiones.FirstOrDefault(x => x.Id == element.Id);
+                if (remis != null)
+                {
+
+                    remis.Nit = element.Nit;
+                    remis.Nombre = element.Nombre;
+                    remis.Telefono = client.Telefono;
+                    remis.Direccion = client.Direccion;
+
+                    context.SaveChanges();
+                }
+            }
         }
     }
 }
