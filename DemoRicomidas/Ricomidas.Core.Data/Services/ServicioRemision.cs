@@ -21,12 +21,28 @@ namespace Ricomidas.Core.Data.Services
 
         public Remision GetById(int id)
         {
-            throw new NotImplementedException();
+            using (var context = new Contexto())
+            {
+                var remis = context.Remisiones.FirstOrDefault(x => x.Id == id);
+                if (remis != null)
+                {
+                    return remis;
+                }
+            }
+
+            return new Remision();
         }
 
         public void Insert(Remision element)
         {
-            throw new NotImplementedException();
+            using (var context=new Contexto())
+            {
+                if (context.Remisiones.Any(x => x.Id == element.Id))
+                {
+                    context.Remisiones.Add(element);
+                    context.SaveChanges();
+                } 
+            }
         }
 
         public void Update(Remision element)
